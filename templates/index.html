@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClash 配置生成器</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        input[type="url"], select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="url"]:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .template-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .progress {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e1e5e9;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        .progress-text {
+            text-align: center;
+            margin-top: 10px;
+            color: #666;
+        }
+
+        .result {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .result.success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+
+        .result.error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+
+        .download-btn {
+            margin-top: 15px;
+            background: #28a745;
+        }
+
+        .download-btn:hover {
+            background: #218838;
+        }
+
+        .features {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .features h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .feature-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .emoji {
+            font-size: 24px;
+            margin-bottom: 8px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 OpenClash 配置生成器</h1>
+            <p>只需提供订阅链接，即可生成完美的配置文件</p>
+        </div>
+
+        <form id="configForm">
+            <div class="form-group">
+                <label for="subscriptionUrl">订阅链接</label>
+                <input type="url" id="subscriptionUrl" placeholder="请输入您的订阅链接" required>
+            </div>
+
+            <div class="form-group">
+                <label for="template">配置模板</label>
+                <select id="template">
+                    <option value="enhanced">增强模板 (推荐)</option>
+                    <option value="basic">基础模板</option>
+                    <option value="gaming">游戏模板</option>
+                    <option value="streaming">流媒体模板</option>
+                </select>
+                <div class="template-info" id="templateInfo">
+                    包含广告拦截、DNS优化等功能，推荐使用
+                </div>
+            </div>
+
+            <button type="submit" class="btn" id="generateBtn">
+                生成配置文件
+            </button>
+        </form>
+
+        <div class="progress" id="progress">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text" id="progressText">正在处理...</div>
+        </div>
+
+        <div class="result" id="result">
+            <div id="resultMessage"></div>
+            <button class="btn download-btn" id="downloadBtn" style="display: none;">
+                下载配置文件
+            </button>
+        </div>
+
+        <div class="features">
+            <h3>✨ 功能特点</h3>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <span class="emoji">🔄</span>
+                    支持多种订阅格式
+                </div>
+                <div class="feature-item">
+                    <span class="emoji">🎯</span>
+                    智能分组规则
+                </div>
+                <div class="feature-item">
+                    <span class="emoji">🛡️</span>
+                    内置广告拦截
+                </div>
+                <div class="feature-item">
+                    <span class="emoji">⚡</span>
+                    自动测速选择
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const templateDescriptions = {
+            'basic': '包含基本的代理分组和规则，适合简单使用',
+            'enhanced': '包含广告拦截、DNS优化等功能，推荐使用',
+            'gaming': '针对游戏优化，包含Steam、Epic等游戏平台规则',
+            'streaming': '针对Netflix、YouTube等流媒体平台优化'
+        };
+
+        document.getElementById('template').addEventListener('change', function() {
+            const templateInfo = document.getElementById('templateInfo');
+            templateInfo.textContent = templateDescriptions[this.value];
+        });
+
+        document.getElementById('configForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const subscriptionUrl = document.getElementById('subscriptionUrl').value;
+            const template = document.getElementById('template').value;
+            const generateBtn = document.getElementById('generateBtn');
+            const progress = document.getElementById('progress');
+            const result = document.getElementById('result');
+            
+            // 重置状态
+            generateBtn.disabled = true;
+            generateBtn.textContent = '正在生成...';
+            progress.style.display = 'block';
+            result.style.display = 'none';
+            
+            try {
+                // 发起生成请求
+                const response = await fetch('/api/generate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        subscription_url: subscriptionUrl,
+                        template: template
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // 轮询状态
+                    pollStatus(data.task_id);
+                } else {
+                    showError(data.error);
+                }
+                
+            } catch (error) {
+                showError('网络错误: ' + error.message);
+            }
+        });
+
+        async function pollStatus(taskId) {
+            try {
+                const response = await fetch(`/api/status/${taskId}`);
+                const status = await response.json();
+                
+                // 更新进度
+                document.getElementById('progressFill').style.width = status.progress + '%';
+                document.getElementById('progressText').textContent = status.message;
+                
+                if (status.status === 'completed') {
+                    showSuccess('配置文件生成成功！', taskId);
+                } else if (status.status === 'failed') {
+                    showError(status.message);
+                } else {
+                    // 继续轮询
+                    setTimeout(() => pollStatus(taskId), 1000);
+                }
+                
+            } catch (error) {
+                showError('获取状态失败: ' + error.message);
+            }
+        }
+
+        function showSuccess(message, taskId) {
+            const generateBtn = document.getElementById('generateBtn');
+            const progress = document.getElementById('progress');
+            const result = document.getElementById('result');
+            const downloadBtn = document.getElementById('downloadBtn');
+            
+            generateBtn.disabled = false;
+            generateBtn.textContent = '生成配置文件';
+            progress.style.display = 'none';
+            
+            result.className = 'result success';
+            result.style.display = 'block';
+            document.getElementById('resultMessage').textContent = message;
+            
+            downloadBtn.style.display = 'block';
+            downloadBtn.onclick = () => {
+                window.open(`/api/download/${taskId}`, '_blank');
+            };
+        }
+
+        function showError(message) {
+            const generateBtn = document.getElementById('generateBtn');
+            const progress = document.getElementById('progress');
+            const result = document.getElementById('result');
+            
+            generateBtn.disabled = false;
+            generateBtn.textContent = '生成配置文件';
+            progress.style.display = 'none';
+            
+            result.className = 'result error';
+            result.style.display = 'block';
+            document.getElementById('resultMessage').textContent = message;
+            document.getElementById('downloadBtn').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

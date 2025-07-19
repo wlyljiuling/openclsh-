@@ -1,0 +1,20 @@
+# 示例订阅链接格式
+# 这个文件展示了各种支持的订阅格式
+
+# VMess 节点示例
+vmess://eyJ2IjoiMiIsInBzIjoi6aaZ5rivMS3muK/op4bpopHpgZMiLCJhZGQiOiJoay5leGFtcGxlLmNvbSIsInBvcnQiOiI0NDMiLCJpZCI6IjEyMzQ1Njc4LTEyMzQtMTIzNC0xMjM0LTEyMzQ1Njc4OTBhYiIsImFpZCI6IjAiLCJuZXQiOiJ3cyIsInR5cGUiOiJub25lIiwiaG9zdCI6ImhrLmV4YW1wbGUuY29tIiwicGF0aCI6Ii8iLCJ0bHMiOiJ0bHMifQ==
+
+# Shadowsocks 节点示例
+ss://YWVzLTI1Ni1nY206cGFzc3dvcmQ=@sg.example.com:443#%E6%96%B0%E5%8A%A0%E5%9D%A11
+
+# Trojan 节点示例
+trojan://password@jp.example.com:443?sni=jp.example.com#%E6%97%A5%E6%9C%AC1
+
+# VLESS 节点示例
+vless://12345678-1234-1234-1234-1234567890ab@us.example.com:443?type=ws&security=tls&path=/&host=us.example.com#%E7%BE%8E%E5%9B%BD1
+
+# 注意：
+# 1. 以上只是格式示例，实际使用时需要替换为真实的订阅链接
+# 2. 订阅链接通常是Base64编码的节点列表
+# 3. 支持HTTP/HTTPS订阅链接
+# 4. 支持Clash格式的YAML订阅

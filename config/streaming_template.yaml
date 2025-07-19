@@ -1,0 +1,110 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: 127.0.0.1:9090
+
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+
+proxies: []
+
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🎯 全球直连
+
+  - name: ♻️ 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies: []
+
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+
+  - name: 📺 流媒体
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+
+  - name: 📺 YouTube
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+
+  - name: 📺 Netflix
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+
+  - name: 🎵 Spotify
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🎯 全球直连
+
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+rules:
+  # 本地网络
+  - DOMAIN-SUFFIX,local,🎯 全球直连
+  - IP-CIDR,127.0.0.0/8,🎯 全球直连
+  - IP-CIDR,172.16.0.0/12,🎯 全球直连
+  - IP-CIDR,192.168.0.0/16,🎯 全球直连
+  - IP-CIDR,10.0.0.0/8,🎯 全球直连
+
+  # YouTube
+  - DOMAIN-SUFFIX,youtube.com,📺 YouTube
+  - DOMAIN-SUFFIX,youtu.be,📺 YouTube
+  - DOMAIN-SUFFIX,youtubei.googleapis.com,📺 YouTube
+  - DOMAIN-SUFFIX,ytimg.com,📺 YouTube
+  - DOMAIN-SUFFIX,googlevideo.com,📺 YouTube
+
+  # Netflix
+  - DOMAIN-SUFFIX,netflix.com,📺 Netflix
+  - DOMAIN-SUFFIX,netflix.net,📺 Netflix
+  - DOMAIN-SUFFIX,nflxext.com,📺 Netflix
+  - DOMAIN-SUFFIX,nflximg.com,📺 Netflix
+  - DOMAIN-SUFFIX,nflximg.net,📺 Netflix
+  - DOMAIN-SUFFIX,nflxso.net,📺 Netflix
+  - DOMAIN-SUFFIX,nflxvideo.net,📺 Netflix
+
+  # Spotify
+  - DOMAIN-SUFFIX,spotify.com,🎵 Spotify
+  - DOMAIN-SUFFIX,spotifycdn.com,🎵 Spotify
+  - DOMAIN-SUFFIX,scdn.co,🎵 Spotify
+
+  # 其他流媒体
+  - DOMAIN-KEYWORD,hulu,📺 流媒体
+  - DOMAIN-KEYWORD,disney,📺 流媒体
+  - DOMAIN-KEYWORD,hbo,📺 流媒体
+  - DOMAIN-KEYWORD,prime,📺 流媒体
+
+  # 国内直连
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼

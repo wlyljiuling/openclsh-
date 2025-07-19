@@ -1,0 +1,93 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: 127.0.0.1:9090
+
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+
+proxies: []
+
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🎯 全球直连
+
+  - name: ♻️ 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies: []
+
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+
+  - name: 🎮 游戏加速
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+
+  - name: 🎮 Steam
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+
+  - name: 🎮 Epic Games
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+rules:
+  # 本地网络
+  - DOMAIN-SUFFIX,local,🎯 全球直连
+  - IP-CIDR,127.0.0.0/8,🎯 全球直连
+  - IP-CIDR,172.16.0.0/12,🎯 全球直连
+  - IP-CIDR,192.168.0.0/16,🎯 全球直连
+  - IP-CIDR,10.0.0.0/8,🎯 全球直连
+
+  # Steam
+  - DOMAIN-SUFFIX,steam-chat.com,🎮 Steam
+  - DOMAIN-SUFFIX,steamcommunity.com,🎮 Steam
+  - DOMAIN-SUFFIX,steampowered.com,🎮 Steam
+  - DOMAIN-SUFFIX,steamstatic.com,🎮 Steam
+  - DOMAIN-SUFFIX,steamcdn-a.akamaihd.net,🎮 Steam
+  - DOMAIN-SUFFIX,steamuserimages-a.akamaihd.net,🎮 Steam
+
+  # Epic Games
+  - DOMAIN-SUFFIX,epicgames.com,🎮 Epic Games
+  - DOMAIN-SUFFIX,helpshift.com,🎮 Epic Games
+  - DOMAIN-SUFFIX,unrealengine.com,🎮 Epic Games
+
+  # 游戏相关
+  - DOMAIN-KEYWORD,game,🎮 游戏加速
+  - DOMAIN-KEYWORD,gaming,🎮 游戏加速
+
+  # 国内直连
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼

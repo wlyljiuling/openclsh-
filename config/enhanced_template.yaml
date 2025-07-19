@@ -1,0 +1,203 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: 127.0.0.1:9090
+secret: ""
+
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  fallback:
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.google/dns-query
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+
+proxies: []
+
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🎯 全球直连
+
+  - name: ♻️ 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies: []
+
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+
+  - name: 🛑 全球拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+
+  - name: 📺 YouTube
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🎯 全球直连
+
+  - name: 🤖 ChatGPT
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+
+  - name: 💎 Gemini
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+
+  - name: 🎵 Spotify
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🎯 全球直连
+
+  - name: 🎮 游戏平台
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+
+  - name: 📱 Telegram
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+
+  - name: 🍎 苹果服务
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+rules:
+  # 本地网络
+  - DOMAIN-SUFFIX,local,🎯 全球直连
+  - IP-CIDR,127.0.0.0/8,🎯 全球直连
+  - IP-CIDR,172.16.0.0/12,🎯 全球直连
+  - IP-CIDR,192.168.0.0/16,🎯 全球直连
+  - IP-CIDR,10.0.0.0/8,🎯 全球直连
+  - IP-CIDR,17.0.0.0/8,🎯 全球直连
+  - IP-CIDR,100.64.0.0/10,🎯 全球直连
+
+  # YouTube
+  - DOMAIN-SUFFIX,youtube.com,📺 YouTube
+  - DOMAIN-SUFFIX,youtu.be,📺 YouTube
+  - DOMAIN-SUFFIX,youtubei.googleapis.com,📺 YouTube
+  - DOMAIN-SUFFIX,ytimg.com,📺 YouTube
+  - DOMAIN-SUFFIX,googlevideo.com,📺 YouTube
+  - DOMAIN-KEYWORD,youtube,📺 YouTube
+
+  # ChatGPT
+  - DOMAIN-SUFFIX,openai.com,🤖 ChatGPT
+  - DOMAIN-SUFFIX,chat.openai.com,🤖 ChatGPT
+  - DOMAIN-SUFFIX,api.openai.com,🤖 ChatGPT
+  - DOMAIN-SUFFIX,chatgpt.com,🤖 ChatGPT
+  - DOMAIN-KEYWORD,openai,🤖 ChatGPT
+  - DOMAIN-KEYWORD,chatgpt,🤖 ChatGPT
+
+  # Gemini
+  - DOMAIN-SUFFIX,gemini.google.com,💎 Gemini
+  - DOMAIN-SUFFIX,bard.google.com,💎 Gemini
+  - DOMAIN-SUFFIX,ai.google.dev,💎 Gemini
+  - DOMAIN-SUFFIX,makersuite.google.com,💎 Gemini
+  - DOMAIN-KEYWORD,gemini,💎 Gemini
+
+  # Spotify
+  - DOMAIN-SUFFIX,spotify.com,🎵 Spotify
+  - DOMAIN-SUFFIX,spotifycdn.com,🎵 Spotify
+  - DOMAIN-SUFFIX,scdn.co,🎵 Spotify
+  - DOMAIN-KEYWORD,spotify,🎵 Spotify
+
+  # Telegram
+  - DOMAIN-SUFFIX,t.me,📱 Telegram
+  - DOMAIN-SUFFIX,tdesktop.com,📱 Telegram
+  - DOMAIN-SUFFIX,telegra.ph,📱 Telegram
+  - DOMAIN-SUFFIX,telegram.me,📱 Telegram
+  - DOMAIN-SUFFIX,telegram.org,📱 Telegram
+  - DOMAIN-SUFFIX,telesco.pe,📱 Telegram
+  - IP-CIDR,91.108.4.0/22,📱 Telegram
+  - IP-CIDR,91.108.8.0/22,📱 Telegram
+  - IP-CIDR,91.108.12.0/22,📱 Telegram
+  - IP-CIDR,91.108.16.0/22,📱 Telegram
+  - IP-CIDR,91.108.56.0/22,📱 Telegram
+  - IP-CIDR,149.154.160.0/20,📱 Telegram
+
+  # 游戏平台
+  - DOMAIN-SUFFIX,steam-chat.com,🎮 游戏平台
+  - DOMAIN-SUFFIX,steamcommunity.com,🎮 游戏平台
+  - DOMAIN-SUFFIX,steampowered.com,🎮 游戏平台
+  - DOMAIN-SUFFIX,steamstatic.com,🎮 游戏平台
+  - DOMAIN-SUFFIX,epicgames.com,🎮 游戏平台
+  - DOMAIN-SUFFIX,helpshift.com,🎮 游戏平台
+  - DOMAIN-SUFFIX,unrealengine.com,🎮 游戏平台
+
+  # 苹果服务
+  - DOMAIN-SUFFIX,apple.com,🍎 苹果服务
+  - DOMAIN-SUFFIX,icloud.com,🍎 苹果服务
+  - DOMAIN-SUFFIX,itunes.com,🍎 苹果服务
+  - DOMAIN-SUFFIX,me.com,🍎 苹果服务
+  - DOMAIN-SUFFIX,mzstatic.com,🍎 苹果服务
+
+  # 微软服务
+  - DOMAIN-SUFFIX,microsoft.com,Ⓜ️ 微软服务
+  - DOMAIN-SUFFIX,microsoftonline.com,Ⓜ️ 微软服务
+  - DOMAIN-SUFFIX,msn.com,Ⓜ️ 微软服务
+  - DOMAIN-SUFFIX,outlook.com,Ⓜ️ 微软服务
+  - DOMAIN-SUFFIX,skype.com,Ⓜ️ 微软服务
+  - DOMAIN-SUFFIX,xbox.com,Ⓜ️ 微软服务
+
+  # 广告拦截
+  - DOMAIN-KEYWORD,adnxs,🛑 全球拦截
+  - DOMAIN-KEYWORD,adsystem,🛑 全球拦截
+  - DOMAIN-KEYWORD,adwords,🛑 全球拦截
+  - DOMAIN-KEYWORD,analytics,🛑 全球拦截
+  - DOMAIN-KEYWORD,doubleclick,🛑 全球拦截
+  - DOMAIN-KEYWORD,googleadservices,🛑 全球拦截
+  - DOMAIN-KEYWORD,googlesyndication,🛑 全球拦截
+  - DOMAIN-KEYWORD,googletagmanager,🛑 全球拦截
+  - DOMAIN-KEYWORD,googletagservices,🛑 全球拦截
+
+  # 国内直连
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼

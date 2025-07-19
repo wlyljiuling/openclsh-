@@ -1,0 +1,21 @@
+# 广告拦截规则
+rules:
+  # 广告关键词
+  - DOMAIN-KEYWORD,adnxs,🛑 全球拦截
+  - DOMAIN-KEYWORD,adsystem,🛑 全球拦截
+  - DOMAIN-KEYWORD,adwords,🛑 全球拦截
+  - DOMAIN-KEYWORD,analytics,🛑 全球拦截
+  - DOMAIN-KEYWORD,doubleclick,🛑 全球拦截
+  - DOMAIN-KEYWORD,googleadservices,🛑 全球拦截
+  - DOMAIN-KEYWORD,googlesyndication,🛑 全球拦截
+  - DOMAIN-KEYWORD,googletagmanager,🛑 全球拦截
+  - DOMAIN-KEYWORD,googletagservices,🛑 全球拦截
+  - DOMAIN-KEYWORD,facebook,🛑 全球拦截
+  - DOMAIN-KEYWORD,twitter,🛑 全球拦截
+  
+  # 广告域名
+  - DOMAIN-SUFFIX,googlesyndication.com,🛑 全球拦截
+  - DOMAIN-SUFFIX,googleadservices.com,🛑 全球拦截
+  - DOMAIN-SUFFIX,doubleclick.net,🛑 全球拦截
+  - DOMAIN-SUFFIX,googletagmanager.com,🛑 全球拦截
+  - DOMAIN-SUFFIX,google-analytics.com,🛑 全球拦截

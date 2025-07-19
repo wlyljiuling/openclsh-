@@ -1,0 +1,844 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: 127.0.0.1:9090
+secret: ''
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  default-nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+  - https://doh.pub/dns-query
+  - https://dns.alidns.com/dns-query
+  fallback:
+  - https://cloudflare-dns.com/dns-query
+  - https://dns.google/dns-query
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+    - 240.0.0.0/4
+proxies:
+- name: 剩余流量84795 GB
+  type: vmess
+  server: eedp257bubu2wefy3.lovebaipiao.net
+  port: 80
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /iphone
+    headers:
+      Host: www.apple.com
+- name: 距离下次重置剩余23 天
+  type: vmess
+  server: eedp257bubu2wefy3.lovebaipiao.net
+  port: 80
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /iphone
+    headers:
+      Host: www.apple.com
+- name: 套餐到期2028-05-11
+  type: vmess
+  server: eedp257bubu2wefy3.lovebaipiao.net
+  port: 80
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /iphone
+    headers:
+      Host: www.apple.com
+- name: 过滤掉10条线路
+  type: vmess
+  server: eedp257bubu2wefy3.lovebaipiao.net
+  port: 80
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /iphone
+    headers:
+      Host: www.apple.com
+- name: 🇷🇺专线去油管广告
+  type: vmess
+  server: eedp257bubu2wefy3.lovebaipiao.net
+  port: 80
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /iphone
+    headers:
+      Host: www.apple.com
+- name: 🇺🇸请每月更-新一次订阅
+  type: vmess
+  server: digitalocean.com
+  port: 8443
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: us1.jjjiedian6j4tblb.com
+  network: ws
+  ws-opts:
+    path: /td6d1aqs/0g8rkph
+    headers:
+      Host: us1.jjjiedian6j4tblb.com
+- name: 🇺🇸 美国 🇺🇸美国ipv6-5G-ss
+  type: ss
+  server: 6ushrhml7ttpliy3.lovebaipiao.net
+  port: 51751
+  udp: true
+  cipher: aes-128-gcm
+  password: cef292b9-54db-4a92-83b3-2651348e7395
+- name: 🇷🇺 俄罗斯 🇷🇺俄罗斯1-专线-去广告
+  type: vmess
+  server: eedp257bubu2wefy1.lovebaipiao.net
+  port: 80
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /iphone
+    headers:
+      Host: www.apple.com
+- name: 🇷🇺 俄罗斯 🇷🇺俄罗斯2-专线-去广告
+  type: vmess
+  server: eedp257bubu2wefy2.lovebaipiao.net
+  port: 80
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /iphone
+    headers:
+      Host: www.apple.com
+- name: ipv6免流-请自行修改host
+  type: vmess
+  server: 6ernu3zmhsv7s95fm.lovebaipiao.net
+  port: 80
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /
+- name: 🇯🇵 日本 🇯🇵日本1
+  type: vmess
+  server: 141.193.213.73
+  port: 2086
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /5atdxvyfjn60ggx/jp1
+    headers:
+      Host: bpjp1.jptimecsgo.xyz
+- name: 🇯🇵 日本 🇯🇵日本2
+  type: vmess
+  server: 141.193.213.223
+  port: 2086
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /5atdxvyfjn60ggx/jp1
+    headers:
+      Host: bpjp1.jptimecsgo.xyz
+- name: 🇯🇵 日本 🇯🇵日本3
+  type: vmess
+  server: cloudflare.182682.xyz
+  port: 2086
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /5atdxvyfjn60ggx/jp1
+    headers:
+      Host: bpjp1.jptimecsgo.xyz
+- name: 🇨🇦 加拿大 🇨🇦加拿大1
+  type: vmess
+  server: digitalocean.com
+  port: 8443
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: bpca2.catimecsgo.xyz
+  network: ws
+  ws-opts:
+    path: /hkz7hea3xiaco2j/ca1
+    headers:
+      Host: bpca2.catimecsgo.xyz
+- name: 🇨🇦 加拿大 🇨🇦加拿大2
+  type: vmess
+  server: 141.193.213.60
+  port: 8443
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: bpca1.catimecsgo.xyz
+  network: ws
+  ws-opts:
+    path: /hkz7hea3xiaco2j/ca1
+    headers:
+      Host: bpca2.catimecsgo.xyz
+- name: 🇨🇦 加拿大 🇨🇦加拿大3
+  type: vmess
+  server: 141.193.213.135
+  port: 8443
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: bpca2.catimecsgo.xyz
+  network: ws
+  ws-opts:
+    path: /hkz7hea3xiaco2j/ca1
+    headers:
+      Host: bpca2.catimecsgo.xyz
+- name: 🇸🇬 新加坡 🇸🇬新加坡1
+  type: vmess
+  server: digitalocean.com
+  port: 8443
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: sg1.jiesk4pdqcqjo16j.xyz
+  network: ws
+  ws-opts:
+    path: /9f2fquad/6mcv2bc
+    headers:
+      Host: sg1.jiesk4pdqcqjo16j.xyz
+- name: 🇸🇬 新加坡 🇸🇬新加坡2
+  type: vmess
+  server: cdn2.bpcdn.cc
+  port: 8443
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: sg1.jiesk4pdqcqjo16j.xyz
+  network: ws
+  ws-opts:
+    path: /9f2fquad/6mcv2bc
+    headers:
+      Host: sg1.jiesk4pdqcqjo16j.xyz
+- name: 🇸🇬 新加坡 🇸🇬新加坡3
+  type: vmess
+  server: cdn3.bpcdn.cc
+  port: 8443
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: sg1.jiesk4pdqcqjo16j.xyz
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: sgtxv82wilpfh6a8vm.lovebaipiao.com
+- name: Youtube破解广告1
+  type: vmess
+  server: digitalocean.com
+  port: 8443
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: er1.jiesk4pdqcqjo16j.xyz
+  network: ws
+  ws-opts:
+    path: /9f2fquad/6mcv2bc
+    headers:
+      Host: er1.jiesk4pdqcqjo16j.xyz
+- name: Youtube破解广告2
+  type: vmess
+  server: 141.193.213.62
+  port: 8443
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: er1.jiesk4pdqcqjo16j.xyz
+  network: ws
+  ws-opts:
+    path: /9f2fquad/6mcv2bc
+    headers:
+      Host: er1.jiesk4pdqcqjo16j.xyz
+- name: Youtube破解广告3
+  type: vmess
+  server: 141.193.213.173
+  port: 8443
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: er1.jiesk4pdqcqjo16j.xyz
+  network: ws
+  ws-opts:
+    path: /9f2fquad/6mcv2bc
+    headers:
+      Host: er1.jiesk4pdqcqjo16j.xyz
+- name: 🇭🇰 香港 香港1
+  type: vmess
+  server: 104.19.174.68
+  port: 8443
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: hk1.jjjiedian6j4tblb.com
+  network: ws
+  ws-opts:
+    path: /td6d1aqs/0g8rkph
+    headers:
+      Host: hk1.jjjiedian6j4tblb.com
+- name: 🇭🇰 香港 香港2
+  type: vmess
+  server: 141.193.213.101
+  port: 8443
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: hk1.jjjiedian6j4tblb.com
+  network: ws
+  ws-opts:
+    path: /td6d1aqs/0g8rkph
+    headers:
+      Host: hk1.jjjiedian6j4tblb.com
+- name: 🇭🇰 香港 香港3
+  type: vmess
+  server: 23.227.38.18
+  port: 8443
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: hk1.jjjiedian6j4tblb.com
+  network: ws
+  ws-opts:
+    path: /td6d1aqs/0g8rkph
+    headers:
+      Host: hk1.jjjiedian6j4tblb.com
+- name: 🇹🇷 土耳其 🇹🇷土耳其1
+  type: vmess
+  server: digitalocean.com
+  port: 8443
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: tk1.jiesk4pdqcqjo16j.xyz
+  network: ws
+  ws-opts:
+    path: /9f2fquad/6mcv2bc
+    headers:
+      Host: tk1.jiesk4pdqcqjo16j.xyz
+- name: 🇹🇷 土耳其 🇹🇷土耳其2
+  type: vmess
+  server: 141.193.213.137
+  port: 8443
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  servername: tk1.jiesk4pdqcqjo16j.xyz
+  network: ws
+  ws-opts:
+    path: /9f2fquad/6mcv2bc
+    headers:
+      Host: tk1.jiesk4pdqcqjo16j.xyz
+- name: 🇹🇷 土耳其 🇹🇷土耳其3
+  type: vmess
+  server: 141.193.213.231
+  port: 8443
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /9f2fquad/6mcv2bc
+    headers:
+      Host: tk1.jiesk4pdqcqjo16j.xyz
+- name: 🇬🇧 英国 🇬🇧英国1丨ChatGpt
+  type: vmess
+  server: 141.193.213.5
+  port: 2086
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /phajnbkyw3wf5b5/uk1
+    headers:
+      Host: bpuk1.uktimecsgo.xyz
+- name: 🇬🇧 英国 🇬🇧英国2丨ChatGpt
+  type: vmess
+  server: 141.193.213.72
+  port: 2086
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /phajnbkyw3wf5b5/uk1
+    headers:
+      Host: bpuk1.uktimecsgo.xyz
+- name: 🇬🇧 英国 🇬🇧英国3丨ChatGpt
+  type: vmess
+  server: 141.193.213.199
+  port: 2086
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /phajnbkyw3wf5b5/uk1
+    headers:
+      Host: bpuk1.uktimecsgo.xyz
+- name: 🇺🇸 美国 🇺🇸美国光速1
+  type: vmess
+  server: 141.193.213.123
+  port: 2086
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /8qq37n268c4r728/us1
+    headers:
+      Host: bpus2.ustimecsgo.xyz
+- name: 🇺🇸 美国 🇺🇸美国光速2
+  type: vmess
+  server: 170.114.45.52
+  port: 2086
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /8qq37n268c4r728/us1
+    headers:
+      Host: bpus2.ustimecsgo.xyz
+- name: 🇺🇸 美国 🇺🇸美国光速3
+  type: vmess
+  server: 170.114.45.53
+  port: 2086
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /8qq37n268c4r728/us1
+    headers:
+      Host: bpus2.ustimecsgo.xyz
+- name: 🇺🇸 美国 🇺🇸美国光速4
+  type: vmess
+  server: csgo.com
+  port: 2086
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /8qq37n268c4r728/us1
+    headers:
+      Host: bpus2.ustimecsgo.xyz
+- name: 🇺🇸 美国 🇺🇸美国光速5
+  type: vmess
+  server: digitalocean.com
+  port: 2086
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /8qq37n268c4r728/us1
+    headers:
+      Host: bpus2.ustimecsgo.xyz
+- name: 🇺🇸 美国 🇺🇸美国光速6
+  type: vmess
+  server: cloudflare.182682.xyz
+  port: 2086
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /8qq37n268c4r728/us1
+    headers:
+      Host: bpus2.ustimecsgo.xyz
+- name: 🇺🇸 美国 🇺🇸美国光速7
+  type: vmess
+  server: 141.193.213.167
+  port: 2086
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /8qq37n268c4r728/us1
+    headers:
+      Host: bpus2.ustimecsgo.xyz
+- name: 🇺🇸 美国 🇺🇸美国光速8
+  type: vmess
+  server: 141.193.213.168
+  port: 2086
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /8qq37n268c4r728/us1
+    headers:
+      Host: bpus2.ustimecsgo.xyz
+- name: 🇺🇸 美国 🇺🇸美国光速9
+  type: vmess
+  server: 141.193.213.169
+  port: 2086
+  udp: true
+  uuid: cef292b9-54db-4a92-83b3-2651348e7395
+  alterId: 0
+  cipher: auto
+  network: ws
+  ws-opts:
+    path: /8qq37n268c4r728/us1
+    headers:
+      Host: bpus2.ustimecsgo.xyz
+proxy-groups:
+- name: 🚀 节点选择
+  type: select
+  proxies:
+  - ♻️ 自动选择
+  - DIRECT
+  - 剩余流量84795 GB
+  - 距离下次重置剩余23 天
+  - 套餐到期2028-05-11
+  - 过滤掉10条线路
+  - 🇷🇺专线去油管广告
+  - 🇺🇸请每月更-新一次订阅
+  - 🇺🇸 美国 🇺🇸美国ipv6-5G-ss
+  - 🇷🇺 俄罗斯 🇷🇺俄罗斯1-专线-去广告
+  - 🇷🇺 俄罗斯 🇷🇺俄罗斯2-专线-去广告
+  - ipv6免流-请自行修改host
+  - 🇯🇵 日本 🇯🇵日本1
+  - 🇯🇵 日本 🇯🇵日本2
+  - 🇯🇵 日本 🇯🇵日本3
+  - 🇨🇦 加拿大 🇨🇦加拿大1
+  - 🇨🇦 加拿大 🇨🇦加拿大2
+  - 🇨🇦 加拿大 🇨🇦加拿大3
+  - 🇸🇬 新加坡 🇸🇬新加坡1
+  - 🇸🇬 新加坡 🇸🇬新加坡2
+  - 🇸🇬 新加坡 🇸🇬新加坡3
+  - Youtube破解广告1
+  - Youtube破解广告2
+  - Youtube破解广告3
+  - 🇭🇰 香港 香港1
+  - 🇭🇰 香港 香港2
+  - 🇭🇰 香港 香港3
+  - 🇹🇷 土耳其 🇹🇷土耳其1
+  - 🇹🇷 土耳其 🇹🇷土耳其2
+  - 🇹🇷 土耳其 🇹🇷土耳其3
+  - 🇬🇧 英国 🇬🇧英国1丨ChatGpt
+  - 🇬🇧 英国 🇬🇧英国2丨ChatGpt
+  - 🇬🇧 英国 🇬🇧英国3丨ChatGpt
+  - 🇺🇸 美国 🇺🇸美国光速1
+  - 🇺🇸 美国 🇺🇸美国光速2
+  - 🇺🇸 美国 🇺🇸美国光速3
+  - 🇺🇸 美国 🇺🇸美国光速4
+  - 🇺🇸 美国 🇺🇸美国光速5
+  - 🇺🇸 美国 🇺🇸美国光速6
+  - 🇺🇸 美国 🇺🇸美国光速7
+  - 🇺🇸 美国 🇺🇸美国光速8
+  - 🇺🇸 美国 🇺🇸美国光速9
+- name: ♻️ 自动选择
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - 剩余流量84795 GB
+  - 距离下次重置剩余23 天
+  - 套餐到期2028-05-11
+  - 过滤掉10条线路
+  - 🇷🇺专线去油管广告
+  - 🇺🇸请每月更-新一次订阅
+  - 🇺🇸 美国 🇺🇸美国ipv6-5G-ss
+  - 🇷🇺 俄罗斯 🇷🇺俄罗斯1-专线-去广告
+  - 🇷🇺 俄罗斯 🇷🇺俄罗斯2-专线-去广告
+  - ipv6免流-请自行修改host
+  - 🇯🇵 日本 🇯🇵日本1
+  - 🇯🇵 日本 🇯🇵日本2
+  - 🇯🇵 日本 🇯🇵日本3
+  - 🇨🇦 加拿大 🇨🇦加拿大1
+  - 🇨🇦 加拿大 🇨🇦加拿大2
+  - 🇨🇦 加拿大 🇨🇦加拿大3
+  - 🇸🇬 新加坡 🇸🇬新加坡1
+  - 🇸🇬 新加坡 🇸🇬新加坡2
+  - 🇸🇬 新加坡 🇸🇬新加坡3
+  - Youtube破解广告1
+  - Youtube破解广告2
+  - Youtube破解广告3
+  - 🇭🇰 香港 香港1
+  - 🇭🇰 香港 香港2
+  - 🇭🇰 香港 香港3
+  - 🇹🇷 土耳其 🇹🇷土耳其1
+  - 🇹🇷 土耳其 🇹🇷土耳其2
+  - 🇹🇷 土耳其 🇹🇷土耳其3
+  - 🇬🇧 英国 🇬🇧英国1丨ChatGpt
+  - 🇬🇧 英国 🇬🇧英国2丨ChatGpt
+  - 🇬🇧 英国 🇬🇧英国3丨ChatGpt
+  - 🇺🇸 美国 🇺🇸美国光速1
+  - 🇺🇸 美国 🇺🇸美国光速2
+  - 🇺🇸 美国 🇺🇸美国光速3
+  - 🇺🇸 美国 🇺🇸美国光速4
+  - 🇺🇸 美国 🇺🇸美国光速5
+  - 🇺🇸 美国 🇺🇸美国光速6
+  - 🇺🇸 美国 🇺🇸美国光速7
+  - 🇺🇸 美国 🇺🇸美国光速8
+  - 🇺🇸 美国 🇺🇸美国光速9
+- name: 🎯 全球直连
+  type: select
+  proxies:
+  - DIRECT
+  - 🚀 节点选择
+- name: 🛑 全球拦截
+  type: select
+  proxies:
+  - REJECT
+  - DIRECT
+- name: 📺 YouTube
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - ♻️ 自动选择
+  - 🎯 全球直连
+- name: 🤖 ChatGPT
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - ♻️ 自动选择
+- name: 💎 Gemini
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - ♻️ 自动选择
+- name: 🎵 Spotify
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - ♻️ 自动选择
+  - 🎯 全球直连
+- name: 🎮 游戏平台
+  type: select
+  proxies:
+  - 🎯 全球直连
+  - 🚀 节点选择
+- name: 📱 Telegram
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - ♻️ 自动选择
+- name: 🍎 苹果服务
+  type: select
+  proxies:
+  - 🎯 全球直连
+  - 🚀 节点选择
+- name: Ⓜ️ 微软服务
+  type: select
+  proxies:
+  - 🎯 全球直连
+  - 🚀 节点选择
+- name: 🐟 漏网之鱼
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - 🎯 全球直连
+  - ♻️ 自动选择
+  - 剩余流量84795 GB
+  - 距离下次重置剩余23 天
+  - 套餐到期2028-05-11
+  - 过滤掉10条线路
+  - 🇷🇺专线去油管广告
+  - 🇺🇸请每月更-新一次订阅
+  - 🇺🇸 美国 🇺🇸美国ipv6-5G-ss
+  - 🇷🇺 俄罗斯 🇷🇺俄罗斯1-专线-去广告
+  - 🇷🇺 俄罗斯 🇷🇺俄罗斯2-专线-去广告
+  - ipv6免流-请自行修改host
+  - 🇯🇵 日本 🇯🇵日本1
+  - 🇯🇵 日本 🇯🇵日本2
+  - 🇯🇵 日本 🇯🇵日本3
+  - 🇨🇦 加拿大 🇨🇦加拿大1
+  - 🇨🇦 加拿大 🇨🇦加拿大2
+  - 🇨🇦 加拿大 🇨🇦加拿大3
+  - 🇸🇬 新加坡 🇸🇬新加坡1
+  - 🇸🇬 新加坡 🇸🇬新加坡2
+  - 🇸🇬 新加坡 🇸🇬新加坡3
+  - Youtube破解广告1
+  - Youtube破解广告2
+  - Youtube破解广告3
+  - 🇭🇰 香港 香港1
+  - 🇭🇰 香港 香港2
+  - 🇭🇰 香港 香港3
+  - 🇹🇷 土耳其 🇹🇷土耳其1
+  - 🇹🇷 土耳其 🇹🇷土耳其2
+  - 🇹🇷 土耳其 🇹🇷土耳其3
+  - 🇬🇧 英国 🇬🇧英国1丨ChatGpt
+  - 🇬🇧 英国 🇬🇧英国2丨ChatGpt
+  - 🇬🇧 英国 🇬🇧英国3丨ChatGpt
+  - 🇺🇸 美国 🇺🇸美国光速1
+  - 🇺🇸 美国 🇺🇸美国光速2
+  - 🇺🇸 美国 🇺🇸美国光速3
+  - 🇺🇸 美国 🇺🇸美国光速4
+  - 🇺🇸 美国 🇺🇸美国光速5
+  - 🇺🇸 美国 🇺🇸美国光速6
+  - 🇺🇸 美国 🇺🇸美国光速7
+  - 🇺🇸 美国 🇺🇸美国光速8
+  - 🇺🇸 美国 🇺🇸美国光速9
+rules:
+- DOMAIN-SUFFIX,local,🎯 全球直连
+- IP-CIDR,127.0.0.0/8,🎯 全球直连
+- IP-CIDR,172.16.0.0/12,🎯 全球直连
+- IP-CIDR,192.168.0.0/16,🎯 全球直连
+- IP-CIDR,10.0.0.0/8,🎯 全球直连
+- IP-CIDR,17.0.0.0/8,🎯 全球直连
+- IP-CIDR,100.64.0.0/10,🎯 全球直连
+- DOMAIN-SUFFIX,youtube.com,📺 YouTube
+- DOMAIN-SUFFIX,youtu.be,📺 YouTube
+- DOMAIN-SUFFIX,youtubei.googleapis.com,📺 YouTube
+- DOMAIN-SUFFIX,ytimg.com,📺 YouTube
+- DOMAIN-SUFFIX,googlevideo.com,📺 YouTube
+- DOMAIN-KEYWORD,youtube,📺 YouTube
+- DOMAIN-SUFFIX,openai.com,🤖 ChatGPT
+- DOMAIN-SUFFIX,chat.openai.com,🤖 ChatGPT
+- DOMAIN-SUFFIX,api.openai.com,🤖 ChatGPT
+- DOMAIN-SUFFIX,chatgpt.com,🤖 ChatGPT
+- DOMAIN-KEYWORD,openai,🤖 ChatGPT
+- DOMAIN-KEYWORD,chatgpt,🤖 ChatGPT
+- DOMAIN-SUFFIX,gemini.google.com,💎 Gemini
+- DOMAIN-SUFFIX,bard.google.com,💎 Gemini
+- DOMAIN-SUFFIX,ai.google.dev,💎 Gemini
+- DOMAIN-SUFFIX,makersuite.google.com,💎 Gemini
+- DOMAIN-KEYWORD,gemini,💎 Gemini
+- DOMAIN-SUFFIX,spotify.com,🎵 Spotify
+- DOMAIN-SUFFIX,spotifycdn.com,🎵 Spotify
+- DOMAIN-SUFFIX,scdn.co,🎵 Spotify
+- DOMAIN-KEYWORD,spotify,🎵 Spotify
+- DOMAIN-SUFFIX,t.me,📱 Telegram
+- DOMAIN-SUFFIX,tdesktop.com,📱 Telegram
+- DOMAIN-SUFFIX,telegra.ph,📱 Telegram
+- DOMAIN-SUFFIX,telegram.me,📱 Telegram
+- DOMAIN-SUFFIX,telegram.org,📱 Telegram
+- DOMAIN-SUFFIX,telesco.pe,📱 Telegram
+- IP-CIDR,91.108.4.0/22,📱 Telegram
+- IP-CIDR,91.108.8.0/22,📱 Telegram
+- IP-CIDR,91.108.12.0/22,📱 Telegram
+- IP-CIDR,91.108.16.0/22,📱 Telegram
+- IP-CIDR,91.108.56.0/22,📱 Telegram
+- IP-CIDR,149.154.160.0/20,📱 Telegram
+- DOMAIN-SUFFIX,steam-chat.com,🎮 游戏平台
+- DOMAIN-SUFFIX,steamcommunity.com,🎮 游戏平台
+- DOMAIN-SUFFIX,steampowered.com,🎮 游戏平台
+- DOMAIN-SUFFIX,steamstatic.com,🎮 游戏平台
+- DOMAIN-SUFFIX,epicgames.com,🎮 游戏平台
+- DOMAIN-SUFFIX,helpshift.com,🎮 游戏平台
+- DOMAIN-SUFFIX,unrealengine.com,🎮 游戏平台
+- DOMAIN-SUFFIX,apple.com,🍎 苹果服务
+- DOMAIN-SUFFIX,icloud.com,🍎 苹果服务
+- DOMAIN-SUFFIX,itunes.com,🍎 苹果服务
+- DOMAIN-SUFFIX,me.com,🍎 苹果服务
+- DOMAIN-SUFFIX,mzstatic.com,🍎 苹果服务
+- DOMAIN-SUFFIX,microsoft.com,Ⓜ️ 微软服务
+- DOMAIN-SUFFIX,microsoftonline.com,Ⓜ️ 微软服务
+- DOMAIN-SUFFIX,msn.com,Ⓜ️ 微软服务
+- DOMAIN-SUFFIX,outlook.com,Ⓜ️ 微软服务
+- DOMAIN-SUFFIX,skype.com,Ⓜ️ 微软服务
+- DOMAIN-SUFFIX,xbox.com,Ⓜ️ 微软服务
+- DOMAIN-KEYWORD,adnxs,🛑 全球拦截
+- DOMAIN-KEYWORD,adsystem,🛑 全球拦截
+- DOMAIN-KEYWORD,adwords,🛑 全球拦截
+- DOMAIN-KEYWORD,analytics,🛑 全球拦截
+- DOMAIN-KEYWORD,doubleclick,🛑 全球拦截
+- DOMAIN-KEYWORD,googleadservices,🛑 全球拦截
+- DOMAIN-KEYWORD,googlesyndication,🛑 全球拦截
+- DOMAIN-KEYWORD,googletagmanager,🛑 全球拦截
+- DOMAIN-KEYWORD,googletagservices,🛑 全球拦截
+- GEOIP,CN,🎯 全球直连
+- MATCH,🐟 漏网之鱼
